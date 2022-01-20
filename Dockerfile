@@ -105,17 +105,6 @@ RUN \
 			https://gerrit.wikimedia.org/r/mediawiki/extensions/UploadWizard \
 			$MEDIAWIKI_STORAGE_PATH/extensions/UploadWizard && \
 		rm -rf $MEDIAWIKI_STORAGE_PATH/extensions/UploadWizard/.git* && \
-	echo "**** download VisualEditor extension ****" && \
-		mkdir -p $MEDIAWIKI_STORAGE_PATH/extensions/VisualEditor && \
-		git clone \
-			--branch ${MEDIAWIKI_BRANCH} \
-			--single-branch \
-			--depth 1 \
-			https://gerrit.wikimedia.org/r/mediawiki/extensions/VisualEditor \
-			$MEDIAWIKI_STORAGE_PATH/extensions/VisualEditor && \
-		cd $MEDIAWIKI_STORAGE_PATH/extensions/VisualEditor && \
-		git submodule update --init && \
-		rm -rf $MEDIAWIKI_STORAGE_PATH/extensions/VisualEditor/.git* && \
 	echo "**** download UserMerge extensions ****" && \
 		mkdir -p $MEDIAWIKI_STORAGE_PATH/extensions/UserMerge && \
 		git clone \
