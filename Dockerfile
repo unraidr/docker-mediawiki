@@ -1,4 +1,4 @@
-FROM lsiobase/nginx:3.10
+FROM lsiobase/nginx:3.15
 # set version label
 ARG BUILD_DATE
 ARG VERSION
@@ -6,7 +6,7 @@ LABEL build_version="version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="unraidr"
 # environment settings
 ENV APK_UPGRADE=false
-ENV PARSOID_VERSION=v0.10.0
+ENV PARSOID_VERSION=v0.14.0
 ENV PARSOID_HOME=/var/lib/parsoid
 ENV PARSOID_USER=parsoid
 ENV PARSOID_WORKERS=1
