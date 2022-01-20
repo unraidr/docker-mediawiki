@@ -63,7 +63,7 @@ RUN \
 		set -x && \
 		adduser -D -u 1010 -s /bin/bash $PARSOID_USER && \
 		mkdir -p $PARSOID_HOME && \
-		git clone \
+		git -c advice.detachedHead=false clone \
 			--branch ${PARSOID_VERSION} \
 			--single-branch \
 			--depth 1 \
