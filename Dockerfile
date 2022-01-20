@@ -114,15 +114,6 @@ RUN \
 			https://gerrit.wikimedia.org/r/mediawiki/extensions/UserMerge \
 			$MEDIAWIKI_STORAGE_PATH/extensions/UserMerge && \
 		rm -rf $MEDIAWIKI_STORAGE_PATH/extensions/UserMerge/.git* && \
-	echo "**** download TemplateData extension ****" && \
-		mkdir -p $MEDIAWIKI_STORAGE_PATH/extensions/TemplateData && \
-		git clone \
-			--branch ${MEDIAWIKI_BRANCH} \
-			--single-branch \
-			--depth 1 \
-			https://gerrit.wikimedia.org/r/mediawiki/extensions/TemplateData \
-			$MEDIAWIKI_STORAGE_PATH/extensions/TemplateData && \
-		rm -rf $MEDIAWIKI_STORAGE_PATH/extensions/TemplateData/.git* && \
 	echo "**** download TemplateStyles extension ****" && \
 		mkdir -p $MEDIAWIKI_STORAGE_PATH/extensions/TemplateStyles && \
 			git clone \
@@ -140,38 +131,24 @@ RUN \
 			--depth 1 \
 			https://gerrit.wikimedia.org/r/mediawiki/extensions/TemplateWizard \
 			$MEDIAWIKI_STORAGE_PATH/extensions/TemplateWizard && \
-		rm -rf $MEDIAWIKI_STORAGE_PATH/extensions/TemplateWizard/.git* && \
-# remove block in future - start
-# remove these extensions after MEDIAWIKI_VERSION_MINOR changes to 34
-# these extentions will be included with mediawiki core
-	echo "**** download Scribunto extension ****" && \
-		mkdir -p $MEDIAWIKI_STORAGE_PATH/extensions/Scribunto && \
-		git clone \
+	echo "**** download Collection extension ****" && \
+		mkdir -p $MEDIAWIKI_STORAGE_PATH/extensions/Collection && \
+			git clone \
 			--branch ${MEDIAWIKI_BRANCH} \
 			--single-branch \
 			--depth 1 \
-			https://gerrit.wikimedia.org/r/mediawiki/extensions/Scribunto \
-			$MEDIAWIKI_STORAGE_PATH/extensions/Scribunto && \
-		rm -rf $MEDIAWIKI_STORAGE_PATH/extensions/Scribunto/.git* && \		
-	echo "**** download PageImages extension ****" && \
-		mkdir -p $MEDIAWIKI_STORAGE_PATH/extensions/PageImages && \
-		git clone \
+			https://gerrit.wikimedia.org/r/mediawiki/extensions/Collection \
+			$MEDIAWIKI_STORAGE_PATH/extensions/Collection && \
+		rm -rf $MEDIAWIKI_STORAGE_PATH/extensions/Collection/.git* && \
+	echo "**** download ElectronPdfService extension ****" && \
+		mkdir -p $MEDIAWIKI_STORAGE_PATH/extensions/ElectronPdfService && \
+			git clone \
 			--branch ${MEDIAWIKI_BRANCH} \
 			--single-branch \
 			--depth 1 \
-			https://gerrit.wikimedia.org/r/mediawiki/extensions/PageImages \
-			$MEDIAWIKI_STORAGE_PATH/extensions/PageImages && \
-		rm -rf $MEDIAWIKI_STORAGE_PATH/extensions/PageImages/.git* && \		
-	echo "**** download TextExtracts extension ****" && \
-		mkdir -p $MEDIAWIKI_STORAGE_PATH/extensions/TextExtracts && \
-		git clone \
-			--branch ${MEDIAWIKI_BRANCH} \
-			--single-branch \
-			--depth 1 \
-			https://gerrit.wikimedia.org/r/mediawiki/extensions/TextExtracts \
-			$MEDIAWIKI_STORAGE_PATH/extensions/TextExtracts && \
-		rm -rf $MEDIAWIKI_STORAGE_PATH/extensions/TextExtracts/.git* && \
-# remove block in future - end		
+			https://gerrit.wikimedia.org/r/mediawiki/extensions/ElectronPdfService \
+			$MEDIAWIKI_STORAGE_PATH/extensions/ElectronPdfService && \
+		rm -rf $MEDIAWIKI_STORAGE_PATH/extensions/ElectronPdfService/.git* && \
 		chown -R abc:abc $MEDIAWIKI_STORAGE_PATH && \
 # cleanup
 	echo "**** cleanup ****" && \
