@@ -22,11 +22,11 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
     - name: Build the Docker Image
-      run: docker build . --file Dockerfile --tag unraidr/docker-mediawiki:$(date +%s)
+      run: docker build . --file Dockerfile --tag unraidr/docker-mediawiki:latest
       
     - name: Push the Docker Image
       env:
         DOCKER_USER: ${{secrets.DOCKER_USER}}
         DOCKER_REPO: ${{secrets.DOCKER_REPO}}
       run: |
-        docker push $DOCKER_USER/$DOCKER_REPO
+        docker push unraidr/docker-mediawiki:latest
