@@ -1,4 +1,4 @@
-FROM lsiobase/nginx:3.15
+FROM lsiobase/nginx:3.13.7
 # set version label
 ARG BUILD_DATE
 ARG VERSION
@@ -6,7 +6,7 @@ LABEL build_version="version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="unraidr"
 # environment settings
 ENV APK_UPGRADE=false
-ENV PARSOID_VERSION=v0.14.0
+ENV PARSOID_VERSION=v0.11.1
 ENV PARSOID_HOME=/var/lib/parsoid
 ENV PARSOID_USER=parsoid
 ENV PARSOID_WORKERS=1
@@ -44,7 +44,6 @@ RUN \
 		php7-json \
 		php7-pecl-apcu \
 		php7-tokenizer \
-		icu-dev \
 		composer \
 		diffutils \
 		ffmpeg \
